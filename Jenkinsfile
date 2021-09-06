@@ -3,8 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                    powershell "cd HelloWorldRazor 
-                    dotnet build"
+                    powershell "cd HelloWorldRazor"
+                    powershell "dotnet build"
+                    
                 }
         }
         }
