@@ -13,3 +13,4 @@ pipeline {
             step([$class: 'perfReport', sourceDataFiles:"/home/docker-master/jmeter_home/results/*.jtl", failBuildIfNoResultFile : true, showTrendGraphs : true])
         }
 }
+}
