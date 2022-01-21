@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-            'sudo docker run -v /home/docker-master/jmeter_home/TestPlan3.jmx:/opt/TestPlan3.jmx -v /home/docker-master/jmeter_home/results:/results/ justb4/jmeter -n -t /opt/TestPlan3.jmx -l /results/result.jtl'
+           sh 'sudo docker run -v /home/docker-master/jmeter_home/TestPlan3.jmx:/opt/TestPlan3.jmx -v /home/docker-master/jmeter_home/results:/results/ justb4/jmeter -n -t /opt/TestPlan3.jmx -l /results/result.jtl'
                 }
         }
         }
@@ -11,9 +11,5 @@ pipeline {
         always{
             /*Publish test results to Jenkins*/
             step([$class: 'perfReport', sourceDataFiles:"/home/docker-master/jmeter_home/results/*.jtl", failBuildIfNoResultFile : true, showTrendGraphs : true])
-        }
-        failure{
-
-            }
         }
 }
