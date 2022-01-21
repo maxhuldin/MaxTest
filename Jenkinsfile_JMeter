@@ -10,7 +10,7 @@ pipeline {
         post {
         always{
             /*Publish test results to Jenkins*/
-            perfReport filterRegex: '', showTrendGraphs: true, sourceDataFiles: '/home/docker-master/jmeter_home/results/*.jtl'
+            perfReport filterRegex: '', showTrendGraphs: true, sourceDataFiles: '/home/docker-master/jmeter_home/results/result.jtl'
         }
 }
 }
