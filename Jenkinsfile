@@ -1,14 +1,14 @@
 pipeline {
-    agent { label 'agent1' }
+    agent { label 'Agent1' }
     environment {
-    DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
+   // DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
     }
     stages {
         stage('Build') {
             steps {
-                    withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
+              //      withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
                     sh 'dotnet build'
-                    }
+              // }
                 }
         }
         }
